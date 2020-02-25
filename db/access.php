@@ -18,8 +18,8 @@
  * Capabilities gradeexport plugin.
  *
  * @package    gradeexport_apogee
- * @author     Université Clermont Auvergne - Anthony Durif
- * @copyright  2019 Université Clermont Auvergne
+ * @author     Anthony Durif - Université Clermont Auvergne
+ * @copyright  2019 Anthony Durif - Université Clermont Auvergne
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -45,5 +45,3 @@ $capabilities = array(
         )
     ),
 );
-
-
