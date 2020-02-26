@@ -5,7 +5,7 @@ Grade export plugin made to export a file with users grades which we can use in 
 Requirements
 ------------
 - Moodle 3.3 (build 2017051500) or later.<br/>
--> Tests made on Moodle 3.3 to 3.6.3 versions<br/>
+-> Tests made on Moodle 3.3 to 3.8.1 versions<br/>
 
 Installation
 ------------
@@ -17,38 +17,35 @@ Installation
 - Download way:
 > Download the zip from https://github.com/andurif/moodle-grade-export_apogee/archive/master.zip, unzip it in grade/export/ folder and rename it "apogee" if necessary.
 
-2. Then visit your Admin Notifications page to complete the installation.  
+2. Then visit your Admin Notifications page to complete the installation.
+
+3. Once installed, you should see new administration options:
+
+> Site administration -> Grades -> Export settings -> File for Apogée -> startlist_delimiter
+
+This option will determine the start of the users list in the .csv used file. If this variable is met, it means the next lines will correspond to students lines where we need to add their grades.
   
 Description / Working
 ------
 <p> This plugin aim is to export a file with students' grades for a course or a grade item (test, assign...) which can be used in the Apogée software with SNW.
-Because the Apogée software requires a formatted file with some informations we do not have in the moodle platform, we choose to work with an existing preformatted file,  
-edited from the software and already with the entire list of student we want to grade (e.g example.csv file).<br/>
+Because the Apogée software requires a formatted file with some informations we do not have in the moodle platform, we choose to work with an existing preformatted file, edited from the software and already with the entire list of student we want to grade (e.g example.csv file) and that we will need to import in the plugin.<br/>
 To summarize, this plugin will read the given file and will complete it with students' grades.
 </p> 
 <p>A form is made to ask the user to provide the preformatted file from Apogée, then to choose which grade item is used and the field delimiter used in the file if necessary.</p>
-<p>One more step could be needed for a good working. You need to define in the <i>grade_export_apogee.php</i> file a const variable which will determine the start of the students' list.
-In the file read, if this variable is met, it means the next lines will correspond to students lines where we need to add their grades.</p>
-
-```php
-<?php   
-//Const variable used to define the start of the user list in the file. The use and the update of the file will start just after this line.
-//It can be set to null if you do not want use delimiter and run every lines if the given file.
-const STARTLIST_DELIMITER = 'XX_ETUDIANTS_XX';
-```
+<p>The system will use the start list delimiter defined in the plugin configuration in order to indicate where this list of students starts in the file.<br/>
+This setting was directly integrated in the plugin previous versions code but it is now an administation setting to add more flexibility.</p>
 
 <p>Note: to link file data and users stored in database, we use the <i>id number</i> field where we store the student code visible for example in our .csv file.<br/>
-According to your configuration, it could be needed to change the <i>print_grades()</i> function of this same .php file to permit the link with another field of the mdl_user table.</p>
+According to your configuration, it could be needed for now to directly change the <i>print_grades()</i> function of this same .php file to permit the link with another field of the mdl_user table or from another column.</p>
 
 
 To do / Improvements
 ------
-* Add a plugin configuration (define headers...).
-* Use of the file dump.php ?
+* Define in the interface columns or values to use to match users (like we had the grades importation preview).
 * Maybe juste provide the header file en then complete it with all enrolled users ? 
-* Tests
+* More tests
 
 
 About us
 ------
-<a href="https://www.uca.fr">Université Clermont Auvergne</a> - 2018
+<a href="https://www.uca.fr">Université Clermont Auvergne</a> - 2020

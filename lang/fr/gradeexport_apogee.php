@@ -26,11 +26,16 @@
 
 $string['eventgradeexported'] = 'Notes exportées pour Apogée';
 $string['pluginname'] = 'Fichier pour Apogée';
-$string['privacy:metadata'] = 'Le plugin d\'export des notes pour Apogée ne stocke aucune données personnelles.';
+$string['privacy:metadata'] = 'Le plugin d\'export des notes pour Apogée ne stocke aucune donnée personnelle.';
 $string['timeexported'] = 'Dernier téléchargement depuis ce cours';
 $string['apogee:view'] = 'Utiliser l\'export pour Apogée';
 $string['apogee:select_file'] = 'Fichier source';
 $string['apogee:source_file'] = 'Source';
-$string['apogee:select_file_help'] = 'Fichier source extrait d\'apogée contenant la liste des étudiants pour lesquels renseigner la note obtenue pour l\'élément d\'évaluation selectionné.';
+$string['apogee:select_file_help'] = 'Fichier source extrait d\'Apogée contenant la liste des étudiants pour lesquels renseigner la note obtenue pour l\'élément d\'évaluation selectionné.';
 $string['apogee:delimiter'] = 'Séparateur de colonne';
 $string['apogee:delimiter_help'] = 'Séparateur de colonne utilisé dans le fichier source. Ce séparateur sera également utilisé dans le fichier qui sera généré avec les notes des utilisateurs.';
+$string['apogee:examplecsv'] = 'Fichier .csv exemple extrait d\'Apogée';
+$string['apogee:examplecsv_help'] = 'Fichier .csv extrait d\'Apogée présentant un exemple de structure attendue par le plugin.';
+$string['apogee:startlist_delimiter'] = 'Délimiteur du début de la liste';
+$string['apogee:startlist_delimiter_desc'] = 'Délimiteur (chaîne de caractères) indiquant que la liste des utilisateurs commencera à la ligne juste après celle possédant ce délimiteur.<br/>
+                                                Il peut être laissé vide si vous n\'avez pas besoin de délimiteur et que toutes les lignes du fichier doivent être traitées.';

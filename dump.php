@@ -23,8 +23,8 @@
  */
 
 define('NO_MOODLE_COOKIES', true); // Session not used here
-require_once(__DIR__ . '/config.php');
-require_once($CFG->dirroot.'/grade/export/apogee/grade_export_apogee.php');
+require_once(__DIR__ . '/../../../config.php');
+require_once($CFG->dirroot . '/grade/export/apogee/grade_export_apogee.php');
 
 $id                 = required_param('id', PARAM_INT);
 $groupid            = optional_param('groupid', 0, PARAM_INT);

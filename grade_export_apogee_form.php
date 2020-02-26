@@ -36,8 +36,7 @@ class grade_export_apogee_form extends moodleform
     /**
      * Form definition.
      */
-    public function definition()
-    {
+    public function definition() {
         global $CFG, $COURSE;
         $mform = $this->_form;
 
@@ -71,6 +70,10 @@ class grade_export_apogee_form extends moodleform
         }
 
         $mform->addElement('header', 'source', get_string('apogee:source_file', 'gradeexport_apogee'));
+
+        $link = html_writer::link(new moodle_url('example.csv'), 'example.csv');
+        $mform->addElement('static', 'examplecsv', get_string('apogee:examplecsv', 'gradeexport_apogee'), $link);
+        $mform->addHelpButton('examplecsv', 'apogee:examplecsv', 'gradeexport_apogee');
 
         $mform->addElement('filepicker', 'importfile', get_string('apogee:select_file', 'gradeexport_apogee'), null, array(
             'maxbytes' => 0,

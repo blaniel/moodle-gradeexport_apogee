@@ -15,18 +15,18 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Version details
+ * List of administration settings used in the block's display.
  *
- * @package    gradeexport
- * @subpackage apogee
- * @author     Université Clermont Auvergne - Anthony Durif
- * @copyright  2019 Université Clermont Auvergne
+ * @package    gradeexport_apogee
+ * @author     Anthony Durif - Université Clermont Auvergne
+ * @copyright  2020 Anthony Durif - Université Clermont Auvergne
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-defined('MOODLE_INTERNAL') || die();
-
-$plugin->version   = 2020022500;        // The current plugin version (Date: YYYYMMDDXX)
-$plugin->requires  = 2017051500;        // Requires this Moodle version
-$plugin->component = 'gradeexport_apogee'; // Full name of the plugin (used for diagnostics)
-$plugin->release   = 'v3.8-r1';
+//Limit of courses shown in the list view by default
+$settings->add(new admin_setting_configtext(
+    'gradeexport_apogee/startlist_delimiter',
+    get_string('apogee:startlist_delimiter', 'gradeexport_apogee'),
+    get_string('apogee:startlist_delimiter_desc', 'gradeexport_apogee'),
+    'XX_ETUDIANTS_XX'
+));

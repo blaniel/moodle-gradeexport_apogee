@@ -23,7 +23,7 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-require_once($CFG->dirroot.'/grade/export/lib.php');
+require_once($CFG->dirroot . '/grade/export/lib.php');
 require_once($CFG->libdir . '/csvlib.class.php');
 
 /**
@@ -38,9 +38,6 @@ class grade_export_apogee extends grade_export {
     public $plugin = 'apogee';
     public $datas;
 
-    // Const variable used to define the start of the user list in the file. The use and the update of the file will start just after this line.
-    // It can be set to null if you do not want use delimiter and run every lines if the given file.
-    const STARTLIST_DELIMITER = 'XX_ETUDIANTS_XX';
     // Array const variable with all differents dilimiters we can use.
     const DELIMITERS = ['semicolon' => ';', 'comma' => ',', 'tab' => '/t'];
 
@@ -84,16 +81,18 @@ class grade_export_apogee extends grade_export {
 
         $item = $DB->get_record('grade_items', array('id' => $this->datas->item));
         $bareme = ($item) ? $item->grademax : "";
+        $startlistdelimiter = get_config('gradeexport_apogee', 'startlist_delimiter');
 
         foreach ($csv as $key => $row) {
             $row = str_getcsv($row, $this::DELIMITERS[$this->datas->delimiter]);
-            if (($row[0] == $this::STARTLIST_DELIMITER && !$process) || $this::STARTLIST_DELIMITER == null) {
+            if (($row[0] == $startlistdelimiter && !$process) || $startlistdelimiter == null) {
                 // Test if the line is the header of the users list. If it is we change the flag $process to start the use of this list with the next line.
-                // We also start the process if the const STARTLIST_DELIMITER is not used/defined.
+                // We also start the process if the configuration variable $startlistdelimiter is not used/defined.
                 $process = true;
             }
             if ($process && is_numeric($row[0])) {
                 // Read the file content.
+                // We check if the first column contains numeric because we use this code to match with idnumber user.
                 $user = $DB->get_record('user', array('idnumber' => $row[0]));
                 if ($user) {
                     $grade = $DB->get_record('grade_grades', array('itemid' => $item->id, 'userid' => $user->id));
