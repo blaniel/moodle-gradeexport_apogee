@@ -30,3 +30,4 @@ $plugin->version   = 2020022500;        // The current plugin version (Date: YYY
 $plugin->requires  = 2017051500;        // Requires this Moodle version.
 $plugin->component = 'gradeexport_apogee'; // Full name of the plugin (used for diagnostics).
 $plugin->release   = 'v3.8-r1';
+$plugin->maturity  = MATURITY_STABLE;
