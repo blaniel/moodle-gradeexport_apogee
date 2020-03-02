@@ -23,7 +23,7 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-//Limit of courses shown in the list view by default
+// Limit of courses shown in the list view by default.
 $settings->add(new admin_setting_configtext(
     'gradeexport_apogee/startlist_delimiter',
     get_string('apogee:startlist_delimiter', 'gradeexport_apogee'),

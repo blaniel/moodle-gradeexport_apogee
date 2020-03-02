@@ -1,4 +1,4 @@
-Moodle UCA - Export de notes pour Apogée (moodle-grade-export_apogee)
+Moodle UCA - Export de notes pour Apogée (moodle-gradeexport_apogee)
 ==================================
 Plugin d'export de notes ayant pour but d'obtenir un fichier contenant les notes des étudiants et utilisables dans le logiciel Apogée.
 
@@ -12,10 +12,10 @@ Installation
 1. Installation du module
 
 - Avec git:
-> git clone https://github.com/andurif/moodle-grade-export_apogee.git grade/export/apogee
+> git clone https://github.com/andurif/moodle-gradeexport_apogee.git grade/export/apogee
 
 - Téléchargement:
-> Télécharger le zip depuis https://github.com/andurif/moodle-grade-export_apogee/archive/master.zip, dézipper l'archive dans le dossier grade/export/ et renommer le si besoin le dossier en "apogee".
+> Télécharger le zip depuis https://github.com/andurif/moodle-gradeexport_apogee/archive/master.zip, dézipper l'archive dans le dossier grade/export/ et renommer le si besoin le dossier en "apogee" ou installez-le depuis la page d'installation des plugins si vous possédeez les bons droits.
   
 2. Aller sur la page de notifications pour finaliser l'installation du plugin.
 

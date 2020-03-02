@@ -1,4 +1,4 @@
-Moodle UCA - Grade export for Apogée (moodle-grade-export_apogee)
+Moodle UCA - Grade export for Apogée (moodle-gradeexport_apogee)
 ==================================
 Grade export plugin made to export a file with users grades which we can use in the Apogée software.
 
@@ -12,10 +12,10 @@ Installation
 1. Local plugin installation
 
 - Git way:
-> git clone https://github.com/andurif/moodle-grade-export_apogee.git grade/export/apogee
+> git clone https://github.com/andurif/moodle-gradeexport_apogee.git grade/export/apogee
 
 - Download way:
-> Download the zip from https://github.com/andurif/moodle-grade-export_apogee/archive/master.zip, unzip it in grade/export/ folder and rename it "apogee" if necessary.
+> Download the zip from https://github.com/andurif/moodle-gradeexport_apogee/archive/master.zip, unzip it in grade/export/ folder and rename it "apogee" if necessary or install it from the "Install plugin" page if you have the right permissions.
 
 2. Then visit your Admin Notifications page to complete the installation.
 

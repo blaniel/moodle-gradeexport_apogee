@@ -22,7 +22,7 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-define('NO_MOODLE_COOKIES', true); // Session not used here
+define('NO_MOODLE_COOKIES', true); // Session not used here.
 require_once(__DIR__ . '/../../../config.php');
 require_once($CFG->dirroot . '/grade/export/apogee/grade_export_apogee.php');
 
@@ -35,11 +35,11 @@ $displaytype        = optional_param('displaytype', $CFG->grade_export_displayty
 $decimalpoints      = optional_param('decimalpoints', $CFG->grade_export_decimalpoints, PARAM_INT);
 $onlyactive         = optional_param('export_onlyactive', 0, PARAM_BOOL);
 
-if (!$course = $DB->get_record('course', array('id'=>$id))) {
+if (!$course = $DB->get_record('course', array('id' => $id))) {
     print_error('invalidcourseid');
 }
 
-require_user_key_login('grade/export', $id); // We want different keys for each course
+require_user_key_login('grade/export', $id); // We want different keys for each course.
 
 $context = context_course::instance($id);
 require_capability('moodle/grade:export', $context);
