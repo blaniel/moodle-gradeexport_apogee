@@ -95,7 +95,11 @@ class grade_export_apogee extends grade_export {
                 // We check if the first column contains numeric because we use this code to match with idnumber user.
                 $user = $DB->get_record('user', array('idnumber' => $row[0]));
                 if ($user) {
-                    $grade = $DB->get_record('grade_grades', array('itemid' => $item->id, 'userid' => $user->id));
+                    $sql = 'SELECT *  FROM {grade_grades}
+                            WHERE itemid = :item 
+                            AND userid = :user 
+                            AND finalgrade IS NOT NULL';
+                    $grade = $DB->get_record_sql($sql, array('item' => $item->id, 'user' => $user->id));
                     if ($grade) {
                         // Update of the content with the item bareme and the item grade of this user.
                         $row[4] = round($grade->finalgrade, 3);

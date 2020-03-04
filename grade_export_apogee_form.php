@@ -50,8 +50,9 @@ class grade_export_apogee_form extends moodleform
             $canviewhidden = has_capability('moodle/grade:viewhidden', context_course::instance($COURSE->id));
 
             foreach ($gradeitems as $gradeitem) {
-                // Is the gradeitem hidden? If so, can the user see hidden gradeitems?
-                if ($gradeitem->is_hidden() && !$canviewhidden) {
+                // Is the grade_item hidden or its deletion pending? If so, can the user see hidden grade_items?
+                $deletionpending = course_module_instance_pending_deletion($COURSE->id, $gradeitem->itemmodule, $gradeitem->iteminstance);
+                if (($gradeitem->is_hidden() && !$canviewhidden) || $deletionpending) {
                     continue;
                 }
 
