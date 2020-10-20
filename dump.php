@@ -1,5 +1,4 @@
 <?php
-
 // This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
@@ -18,14 +17,14 @@
 /**
  *
  * @package    gradeexport_apogee
- * @author     Université Clermont Auvergne - Anthony Durif
- * @copyright  2019 Université Clermont Auvergne
+ * @author     Anthony Durif - Université Clermont Auvergne
+ * @copyright  2019 Anthony Durif - Université Clermont Auvergne
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-define('NO_MOODLE_COOKIES', true); // session not used here
-require_once '../../../config.php';
-require_once($CFG->dirroot.'/grade/export/apogee/grade_export_apogee.php');
+define('NO_MOODLE_COOKIES', true); // Session not used here.
+require_once(__DIR__ . '/../../../config.php');
+require_once($CFG->dirroot . '/grade/export/apogee/grade_export_apogee.php');
 
 $id                 = required_param('id', PARAM_INT);
 $groupid            = optional_param('groupid', 0, PARAM_INT);
@@ -36,11 +35,11 @@ $displaytype        = optional_param('displaytype', $CFG->grade_export_displayty
 $decimalpoints      = optional_param('decimalpoints', $CFG->grade_export_decimalpoints, PARAM_INT);
 $onlyactive         = optional_param('export_onlyactive', 0, PARAM_BOOL);
 
-if (!$course = $DB->get_record('course', array('id'=>$id))) {
+if (!$course = $DB->get_record('course', array('id' => $id))) {
     print_error('invalidcourseid');
 }
 
-require_user_key_login('grade/export', $id); // we want different keys for each course
+require_user_key_login('grade/export', $id); // We want different keys for each course.
 
 $context = context_course::instance($id);
 require_capability('moodle/grade:export', $context);

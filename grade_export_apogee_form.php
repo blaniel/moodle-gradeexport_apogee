@@ -1,5 +1,4 @@
 <?php
-
 // This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
@@ -18,8 +17,8 @@
 /**
  *
  * @package    gradeexport_apogee
- * @author     Université Clermont Auvergne - Anthony Durif
- * @copyright  2019 Université Clermont Auvergne
+ * @author     Anthony Durif - Université Clermont Auvergne
+ * @copyright  2019 Anthony Durif - Université Clermont Auvergne
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -29,14 +28,15 @@ require_once("$CFG->libdir/formslib.php");
  * grade_export_apogee_form class, used to determine which grade item export and for which students.
  *
  * @package    gradeexport_apogee
- * @copyright  2019 Université Clermont Auvergne
+ * @copyright  2019 Anthony Durif - Université Clermont Auvergne
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class grade_export_apogee_form extends moodleform
 {
-    //Add elements to form
-    public function definition()
-    {
+    /**
+     * Form definition.
+     */
+    public function definition() {
         global $CFG, $COURSE;
         $mform = $this->_form;
 
@@ -45,20 +45,21 @@ class grade_export_apogee_form extends moodleform
         $switch = grade_get_setting($COURSE->id, 'aggregationposition', $CFG->grade_aggregationposition);
         $gseq = new grade_seq($COURSE->id, $switch);
 
-        if ($grade_items = $gseq->items) {
+        if ($gradeitems = $gseq->items) {
             $default = 0;
             $canviewhidden = has_capability('moodle/grade:viewhidden', context_course::instance($COURSE->id));
 
-            foreach ($grade_items as $grade_item) {
-                // Is the grade_item hidden? If so, can the user see hidden grade_items?
-                if ($grade_item->is_hidden() && !$canviewhidden) {
+            foreach ($gradeitems as $gradeitem) {
+                // Is the grade_item hidden or its deletion pending? If so, can the user see hidden grade_items?
+                $deletionpending = course_module_instance_pending_deletion($COURSE->id, $gradeitem->itemmodule, $gradeitem->iteminstance);
+                if (($gradeitem->is_hidden() && !$canviewhidden) || $deletionpending) {
                     continue;
                 }
 
-                $radioarray[] =& $mform->createElement('radio', 'item', '', $grade_item->get_name(), $grade_item->id);
+                $radioarray[] =& $mform->createElement('radio', 'item', '', $gradeitem->get_name(), $gradeitem->id);
 
-                if ($grade_item->itemtype == "course") {
-                    $default = $grade_item->id;
+                if ($gradeitem->itemtype == "course") {
+                    $default = $gradeitem->id;
                 }
             }
 
@@ -70,6 +71,10 @@ class grade_export_apogee_form extends moodleform
         }
 
         $mform->addElement('header', 'source', get_string('apogee:source_file', 'gradeexport_apogee'));
+
+        $link = html_writer::link(new moodle_url('example.csv'), 'example.csv');
+        $mform->addElement('static', 'examplecsv', get_string('apogee:examplecsv', 'gradeexport_apogee'), $link);
+        $mform->addHelpButton('examplecsv', 'apogee:examplecsv', 'gradeexport_apogee');
 
         $mform->addElement('filepicker', 'importfile', get_string('apogee:select_file', 'gradeexport_apogee'), null, array(
             'maxbytes' => 0,

@@ -1,5 +1,4 @@
 <?php
-
 // This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
@@ -19,8 +18,8 @@
  * Strings for component 'gradeexport_apogee', language 'en'
  *
  * @package    gradeexport_apogee
- * @author     Université Clermont Auvergne - Anthony Durif
- * @copyright  2019 Université Clermont Auvergne
+ * @author     Anthony Durif - Université Clermont Auvergne
+ * @copyright  2019 Anthony Durif - Université Clermont Auvergne
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -31,6 +30,11 @@ $string['timeexported'] = 'Last downloaded from this course';
 $string['apogee:view'] = 'Use Apogée grade export';
 $string['apogee:select_file'] = 'Source file';
 $string['apogee:source_file'] = 'Source';
-$string['apogee:select_file_help'] = 'Source file extracted from apogee with the list of students whose we want to add grade for the selected grade item.';
+$string['apogee:select_file_help'] = 'Source file extracted from Apogée with the list of students whose we want to add grade for the selected grade item.';
 $string['apogee:delimiter'] = 'Column delimiter';
 $string['apogee:delimiter_help'] = 'Column delimiter used in the source file. This delimiter will be also used in the export with users grades.';
+$string['apogee:examplecsv'] = 'Example .csv file from Apogée';
+$string['apogee:examplecsv_help'] = 'Example .csv file from Apogée with an expected structure example.';
+$string['apogee:startlist_delimiter'] = 'Users list start delimiter';
+$string['apogee:startlist_delimiter_desc'] = 'Delimiter (string) which indicate the users list will start at the line just after the one with this delimiter.<br/>
+                                                It can be set to empty/null if you do not want use delimiter and run every lines if the given file.';

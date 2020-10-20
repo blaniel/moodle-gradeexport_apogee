@@ -19,14 +19,15 @@
  *
  * @package    gradeexport
  * @subpackage apogee
- * @author     Université Clermont Auvergne - Anthony Durif
- * @copyright  2019 Université Clermont Auvergne
+ * @author     Anthony Durif - Université Clermont Auvergne
+ * @copyright  2019 Anthony Durif - Université Clermont Auvergne
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version   = 2019042900;        // The current plugin version (Date: YYYYMMDDXX)
-$plugin->requires  = 2018112800;        // Requires this Moodle version
-$plugin->component = 'gradeexport_apogee'; // Full name of the plugin (used for diagnostics)
-$plugin->release   = 'v3.6-r1';
+$plugin->version   = 2020030500;        // The current plugin version (Date: YYYYMMDDXX).
+$plugin->requires  = 2017051500;        // Requires this Moodle version.
+$plugin->component = 'gradeexport_apogee'; // Full name of the plugin (used for diagnostics).
+$plugin->release   = 'v3.8-r2';
+$plugin->maturity  = MATURITY_STABLE;
