@@ -26,6 +26,7 @@
 
 require_once($CFG->dirroot.'/grade/export/lib.php');
 require_once($CFG->libdir . '/csvlib.class.php');
+require_once('classes/custom_csv_export_writer.php');
 
 /**
  * Privacy Subsystem implementation for gradeexport_apogee.
@@ -71,7 +72,10 @@ class grade_export_apogee extends grade_export {
         $csv = str_getcsv($content, "\n");
         $process = false;
 
-        $csvexport = new csv_export_writer($this->datas->delimiter);
+        //$csvexport = new csv_export_writer($this->datas->delimiter);
+        // We call our custom export_writer class and use a custom enclosure, we choose an enclosure (~) with low chances to be in the exported source file.
+        // We add these custom export_writer and  enclosure uses because default enclose (") can cause a bug with composed names.
+        $csvexport = new custom_csv_export_writer($this->datas->delimiter, "~");
         $shortname = format_string($this->course->shortname, true, array('context' => context_course::instance($this->course->id)));
         $downloadfilename = clean_filename($shortname . get_string('grades'));
         $csvexport->set_filename($downloadfilename);
