@@ -70,23 +70,23 @@ class grade_export_apogee_form extends moodleform
             }
         }
 
-        $mform->addElement('header', 'source', get_string('apogee:source_file', 'gradeexport_apogee'));
+        $mform->addElement('header', 'source', get_string('source_file', 'gradeexport_apogee'));
 
         $link = html_writer::link(new moodle_url('example.csv'), 'example.csv');
-        $mform->addElement('static', 'examplecsv', get_string('apogee:examplecsv', 'gradeexport_apogee'), $link);
-        $mform->addHelpButton('examplecsv', 'apogee:examplecsv', 'gradeexport_apogee');
+        $mform->addElement('static', 'examplecsv', get_string('examplecsv', 'gradeexport_apogee'), $link);
+        $mform->addHelpButton('examplecsv', 'examplecsv', 'gradeexport_apogee');
 
-        $mform->addElement('filepicker', 'importfile', get_string('apogee:select_file', 'gradeexport_apogee'), null, array(
+        $mform->addElement('filepicker', 'importfile', get_string('select_file', 'gradeexport_apogee'), null, array(
             'maxbytes' => 0,
             'accepted_types' => array('.csv'),
             'trusttext' => false,
         ));
-        $mform->addHelpButton('importfile', 'apogee:select_file', 'gradeexport_apogee', '', null);
+        $mform->addHelpButton('importfile', 'select_file', 'gradeexport_apogee', '', null);
         $mform->addRule('importfile', null, 'required', null, 'client');
 
         $delimiterslist = ['semicolon' => ';', 'comma' => ',', 'tab' => '/t'];
-        $mform->addElement('select', 'delimiter', get_string('apogee:delimiter', 'gradeexport_apogee'), $delimiterslist);
-        $mform->addHelpButton('delimiter', 'apogee:delimiter', 'gradeexport_apogee');
+        $mform->addElement('select', 'delimiter', get_string('delimiter', 'gradeexport_apogee'), $delimiterslist);
+        $mform->addHelpButton('delimiter', 'delimiter', 'gradeexport_apogee');
         $mform->setDefault('delimiter', 'semicolon');
 
         $this->add_action_buttons();

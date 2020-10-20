@@ -26,7 +26,7 @@
 // Limit of courses shown in the list view by default.
 $settings->add(new admin_setting_configtext(
     'gradeexport_apogee/startlist_delimiter',
-    get_string('apogee:startlist_delimiter', 'gradeexport_apogee'),
-    get_string('apogee:startlist_delimiter_desc', 'gradeexport_apogee'),
+    get_string('startlist_delimiter', 'gradeexport_apogee'),
+    get_string('startlist_delimiter_desc', 'gradeexport_apogee'),
     'XX_ETUDIANTS_XX'
 ));
