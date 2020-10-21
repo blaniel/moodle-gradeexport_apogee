@@ -36,10 +36,19 @@ require_once('classes/custom_csv_export_writer.php');
  */
 class grade_export_apogee extends grade_export {
 
+    /*
+     * Plugin name.
+     */
     public $plugin = 'apogee';
+
+    /*
+     * Form datas.
+     */
     public $datas;
 
-    // Array const variable with all differents dilimiters we can use.
+    /*
+     * Array const variable with all differents dilimiters we can use.
+     */
     const DELIMITERS = ['semicolon' => ';', 'comma' => ',', 'tab' => '/t'];
 
     /**

@@ -15,6 +15,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
+ * Dump.php file.
  *
  * @package    gradeexport_apogee
  * @author     Anthony Durif - Université Clermont Auvergne
