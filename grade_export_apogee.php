@@ -106,7 +106,13 @@ class grade_export_apogee extends grade_export {
             if ($process && is_numeric($row[0])) {
                 // Read the file content.
                 // We check if the first column contains numeric because we use this code to match with idnumber user.
-                $user = $DB->get_record('user', array('idnumber' => $row[0]));
+                $mapping = get_config('gradeexport_apogee', 'mapping_type');
+                try {
+                    $user = ($mapping == "idnumber") ? $DB->get_record('user', array('idnumber' => $row[0], 'confirmed' => 1))
+                        : $DB->get_record('user', array('lastname' => $row[1], 'firstname' => $row[2], 'confirmed' => 1));
+                }
+                catch (Exception $e) { continue; }
+
                 if ($user) {
                     $sql = 'SELECT *  FROM {grade_grades}
                             WHERE itemid = :item 

@@ -40,3 +40,7 @@ $string['examplecsv_help'] = 'Fichier .csv extrait d\'Apogée présentant un exe
 $string['startlist_delimiter'] = 'Délimiteur du début de la liste';
 $string['startlist_delimiter_desc'] = 'Délimiteur (chaîne de caractères) indiquant que la liste des utilisateurs commencera à la ligne juste après celle possédant ce délimiteur.<br/>
                                                 Il peut être laissé vide si vous n\'avez pas besoin de délimiteur et que toutes les lignes du fichier doivent être traitées.';
+$string['mapping_type'] = 'Mapping des étudiants';
+$string['mapping_type_desc'] = 'Comment relier les étudiants inscrits au cours avec les étudiants listés dans le fichier .csv fourni.';
+$string['mapping_type_name'] = 'Nom-prénom';
+$string['mapping_type_idnumber'] = 'Numéro étudiant-Numéro d\'identification';

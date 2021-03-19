@@ -5,7 +5,7 @@ Plugin d'export de notes ayant pour but d'obtenir un fichier contenant les notes
 Pré-requis
 ------------
 - Moodle en version 3.3 (build 2017051500) ou plus récente.<br/>
--> Tests effectués sur des versions 3.3 à 3.9.1<br/>
+-> Tests effectués sur des versions 3.3 à 3.10.1<br/>
 
 Installation
 ------------

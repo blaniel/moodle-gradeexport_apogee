@@ -5,7 +5,7 @@ Grade export plugin made to export a file with users grades which we can use in 
 Requirements
 ------------
 - Moodle 3.3 (build 2017051500) or later.<br/>
--> Tests made on Moodle 3.3 to 3.9.1 versions<br/>
+-> Tests made on Moodle 3.3 to 3.10.1 versions<br/>
 
 Installation
 ------------

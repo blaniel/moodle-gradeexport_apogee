@@ -40,3 +40,7 @@ $string['examplecsv_help'] = 'Example .csv file from Apogée with an expected st
 $string['startlist_delimiter'] = 'Users list start delimiter';
 $string['startlist_delimiter_desc'] = 'Delimiter (string) which indicate the users list will start at the line just after the one with this delimiter.<br/>
                                                 It can be set to empty/null if you do not want use delimiter and run every lines if the given file.';
+$string['mapping_type'] = 'Students mapping';
+$string['mapping_type_desc'] = 'How do you map course enrolled students to students listed in the given .csv file.';
+$string['mapping_type_name'] = 'Lastname-firstname';
+$string['mapping_type_idnumber'] = 'Student number-Id number';
