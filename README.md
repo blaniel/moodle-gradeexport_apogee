@@ -5,7 +5,7 @@ Grade export plugin made to export a file with users grades which we can use in 
 Requirements
 ------------
 - Moodle 3.3 (build 2017051500) or later.<br/>
--> Tests made on Moodle 3.3 to 3.10.1 versions<br/>
+-> Tests made on Moodle 3.3 to 3.11.0 versions<br/>
 
 Installation
 ------------
@@ -15,7 +15,7 @@ Installation
 > git clone https://github.com/andurif/moodle-gradeexport_apogee.git grade/export/apogee
 
 - Download way:
-> Download the zip from https://github.com/andurif/moodle-gradeexport_apogee/archive/master.zip, unzip it in grade/export/ folder and rename it "apogee" if necessary or install it from the "Install plugin" page if you have the right permissions.
+> Download the zip from https://github.com/andurif/moodle-gradeexport_apogee/archive/refs/heads/master.zip, unzip it in grade/export/ folder and rename it "apogee" if necessary or install it from the "Install plugin" page if you have the right permissions.
 
 2. Then visit your Admin Notifications page to complete the installation.
 
