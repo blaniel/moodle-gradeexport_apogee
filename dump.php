@@ -37,7 +37,7 @@ $decimalpoints      = optional_param('decimalpoints', $CFG->grade_export_decimal
 $onlyactive         = optional_param('export_onlyactive', 0, PARAM_BOOL);
 
 if (!$course = $DB->get_record('course', array('id' => $id))) {
-    print_error('invalidcourseid');
+    throw new moodle_exception(('invalidcourseid');
 }
 
 require_user_key_login('grade/export', $id); // We want different keys for each course.
@@ -47,7 +47,7 @@ require_capability('moodle/grade:export', $context);
 require_capability('gradeexport/apogee:view', $context);
 
 if (!groups_group_visible($groupid, $COURSE)) {
-    print_error('cannotaccessgroup', 'grades');
+    throw new moodle_exception(('cannotaccessgroup', 'grades');
 }
 
 // Get all url parameters and create an object to simulate a form submission.

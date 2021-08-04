@@ -33,7 +33,7 @@ $course = get_course($id);
 $PAGE->set_url('/grade/export/apogee/export.php', array('id' => $id));
 
 if (!$course) {
-    print_error('invalidcourseid');
+    throw new moodle_exception(('invalidcourseid');
 }
 
 require_login($course);
@@ -44,7 +44,7 @@ require_capability('gradeexport/apogee:view', $context);
 
 if (groups_get_course_groupmode($COURSE) == SEPARATEGROUPS and !has_capability('moodle/site:accessallgroups', $context)) {
     if (!groups_is_member($groupid, $USER->id)) {
-        print_error('cannotaccessgroup', 'grades');
+        throw new moodle_exception(('cannotaccessgroup', 'grades');
     }
 }
 

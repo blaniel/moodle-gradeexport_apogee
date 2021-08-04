@@ -35,7 +35,7 @@ $course = get_course($id);
 $PAGE->set_url('/grade/export/apogee/index.php', array('id' => $id));
 
 if (!$course) {
-    print_error('invalidcourseid');
+    throw new moodle_exception(('invalidcourseid');
 }
 
 require_login($course);
