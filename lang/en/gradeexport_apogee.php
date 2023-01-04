@@ -44,3 +44,10 @@ $string['mapping_type'] = 'Students mapping';
 $string['mapping_type_desc'] = 'How do you map course enrolled students to students listed in the given .csv file.';
 $string['mapping_type_name'] = 'Lastname-firstname';
 $string['mapping_type_idnumber'] = 'Student number-Id number';
+
+$string['attendance'] = 'Attendance management';
+$string['attendance_desc'] = '<div class="alert alert-info">With the two selection fields below you can identify absent students. In function of the type of their non attendance a value will be added for the import in Apogée:
+    <strong>ABJ</strong> for a justified non attendance and <strong>ABI</strong> for an unjustified non attendance. These values can be added in the file after its generation if needed.</div>';
+$string['attendance_abj'] = 'Justified non attendance(s) - ABJ';
+$string['attendance_abi'] = 'Unjustified non attendance(s) - ABI';
+$string['attendance_error'] = 'Error during the selection: students cannot be selected in the justified AND unjustified non attendance lists.';

@@ -23,21 +23,26 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-// Limit of courses shown in the list view by default.
-$settings->add(new admin_setting_configtext(
-    'gradeexport_apogee/startlist_delimiter',
-    get_string('startlist_delimiter', 'gradeexport_apogee'),
-    get_string('startlist_delimiter_desc', 'gradeexport_apogee'),
-    'XX_ETUDIANTS_XX'
-));
+if ($hassiteconfig) {
+    $settings = new admin_settingpage('gradeexport_apogee', get_string('pluginname', 'gradeexport_apogee'));
+    $ADMIN->add('localplugins', $settings);
 
-$settings->add(new admin_setting_configselect(
-    'gradeexport_apogee/mapping_type',
-    get_string('mapping_type', 'gradeexport_apogee'),
-    get_string('mapping_type_desc', 'gradeexport_apogee'),
-    'idnumber',
-    array(
-        'name'       =>  get_string('mapping_type_name', 'gradeexport_apogee'),
-        'idnumber'   =>  get_string('mapping_type_idnumber', 'gradeexport_apogee'),
-    )
-));
+    // Limit of courses shown in the list view by default.
+    $settings->add(new admin_setting_configtext(
+        'gradeexport_apogee/startlist_delimiter',
+        get_string('startlist_delimiter', 'gradeexport_apogee'),
+        get_string('startlist_delimiter_desc', 'gradeexport_apogee'),
+        'XX_ETUDIANTS_XX'
+    ));
+
+    $settings->add(new admin_setting_configselect(
+        'gradeexport_apogee/mapping_type',
+        get_string('mapping_type', 'gradeexport_apogee'),
+        get_string('mapping_type_desc', 'gradeexport_apogee'),
+        'idnumber',
+        array(
+            'name' => get_string('mapping_type_name', 'gradeexport_apogee'),
+            'idnumber' => get_string('mapping_type_idnumber', 'gradeexport_apogee'),
+        )
+    ));
+}

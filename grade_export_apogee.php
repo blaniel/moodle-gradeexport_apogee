@@ -114,15 +114,25 @@ class grade_export_apogee extends grade_export {
                 catch (Exception $e) { continue; }
 
                 if ($user) {
-                    $sql = 'SELECT *  FROM {grade_grades}
-                            WHERE itemid = :item 
-                            AND userid = :user 
-                            AND finalgrade IS NOT NULL';
-                    $grade = $DB->get_record_sql($sql, array('item' => $item->id, 'user' => $user->id));
-                    if ($grade) {
-                        // Update of the content with the item bareme and the item grade of this user.
-                        $row[4] = round($grade->finalgrade, 3);
-                        $row[5] = round($bareme);
+                    if (in_array($user->idnumber, $this->datas->abi)) {
+                        // Update of the content with no bareme and specific "ABI" note of this user.
+                        $row[4] = "ABI";
+                        $row[5] = "";
+                    } elseif (in_array($user->idnumber, $this->datas->abj)) {
+                        // Update of the content with no bareme and specific "ABJ" note of this user.
+                        $row[4] = "ABJ";
+                        $row[5] = "";
+                    } else {
+                        $sql = 'SELECT *  FROM {grade_grades}
+                                WHERE itemid = :item 
+                                AND userid = :user 
+                                AND finalgrade IS NOT NULL';
+                        $grade = $DB->get_record_sql($sql, array('item' => $item->id, 'user' => $user->id));
+                        if ($grade) {
+                            // Update of the content with the item bareme and the item grade of this user.
+                            $row[4] = round($grade->finalgrade, 3);
+                            $row[5] = round($bareme);
+                        }
                     }
                 }
             }

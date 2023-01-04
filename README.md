@@ -5,7 +5,7 @@ Grade export plugin made to export a file with users grades which we can use in 
 Requirements
 ------------
 - Moodle 3.3 (build 2017051500) or later.<br/>
--> Tests made on Moodle 3.3 to 3.11.0 versions<br/>
+-> Tests made on Moodle 3.3 to 4.0 versions<br/>
 
 Installation
 ------------
@@ -34,6 +34,7 @@ To summarize, this plugin will read the given file and will complete it with stu
 <p>A form is made to ask the user to provide the preformatted file from Apogée, then to choose which grade item is used and the field delimiter used in the file if necessary.</p>
 <p>The system will use the start list delimiter defined in the plugin configuration in order to indicate where this list of students starts in the file.<br/>
 This setting was directly integrated in the plugin previous versions code but it is now an administation setting to add more flexibility.</p>
+<p>In the form it will be possible to identify absent students and to associate a specific Apogée value (ABJ for a justified non attendance and ABI for a unjustified non attendance).</p>
 
 <p>Note: to link file data and users stored in database, we use the <i>id number</i> field where we store the student code visible for example in our .csv file.<br/>
 According to your configuration, it could be needed for now to directly change the <i>print_grades()</i> function of this same .php file to permit the link with another field of the mdl_user table or from another column.</p>
@@ -48,4 +49,4 @@ To do / Improvements
 
 About us
 ------
-<a href="https://www.uca.fr">Université Clermont Auvergne</a> - 2020
+<a href="https://www.uca.fr">Université Clermont Auvergne</a> - 2023

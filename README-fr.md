@@ -5,7 +5,7 @@ Plugin d'export de notes ayant pour but d'obtenir un fichier contenant les notes
 Pré-requis
 ------------
 - Moodle en version 3.3 (build 2017051500) ou plus récente.<br/>
--> Tests effectués sur des versions 3.3 à 3.11.0<br/>
+-> Tests effectués sur des versions 3.3 à 4.0<br/>
 
 Installation
 ------------
@@ -35,6 +35,7 @@ En résumé, le plugin parcourera ce fichier fourni par l'utilisateur et le comp
 <p>Un formulaire est mis en place et demandera à l'utilisateur de fournir le fichier issu d'apogée "vide", de choisir pour quel élément notation récupérer les notes et au besoin le délimiteur utilisé dans le fichier.</p>
 <p>Le système prendra en compte le délimiteur de début de liste défini dans l'administration et la configuration du plugin pour indiquer où commence la liste des étudiants dans le fichier.<br/>
 Ce paramètre était directement intégré dans le code des versions précédentes du plugin mais a été ajouté comme paramètre  pour ajouter plus de fléxibilité.</p>
+<p>Dans le formulaire il sera aussi possible de définir les étudiants absents et de leur associer dans le fichier une valeur de note spécifique à Apogée (ABJ pour une absence justifiée et ABI pour une absence non justifiée).</p>
 
 <p>Note: pour faire le lien avec les utilisateurs en base de donnée, nous utilisons le champ <i>Numéro d'identification</i> où est renseigné pour tous le code étudiant que l'on pourra retrouver dans le fichier .csv.<br/>
 En fonction de votre configuration, il faudra, pour l'instant, modifier directement la fonction <i>print_grades()</i> du même fichier pour pouvoir faire le lien sur un autre champ de la table mdl_user ou depuis une autre colonne du fichier fourni.</p>
@@ -48,4 +49,4 @@ To do / Améliorations possibles
 
 A propos
 ------
-<a href="https://www.uca.fr">Université Clermont Auvergne</a> - 2020
+<a href="https://www.uca.fr">Université Clermont Auvergne</a> - 2023

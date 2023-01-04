@@ -90,6 +90,37 @@ class grade_export_apogee_form extends moodleform
         $mform->addHelpButton('delimiter', 'delimiter', 'gradeexport_apogee');
         $mform->setDefault('delimiter', 'semicolon');
 
+        // Attendance.
+        $coursecontext = context_course::instance($COURSE->id);
+        $users = [];
+        foreach (get_enrolled_users($coursecontext, 'moodle/block:view') as $user) {
+            if ($user->auth == "cas" && strpos($user->email, "@etu") !== false) {
+                // Check if enrolled user is a student (to be found in Apogee).
+                $users[$user->idnumber] = fullname($user);
+            }
+        }
+
+        if ($users) {
+            $mform->addElement('header', 'attendance', get_string('apogee:attendance', 'gradeexport_apogee'));
+            $mform->addElement('html',  get_string('apogee:attendance_desc', 'gradeexport_apogee'));
+            $mform->addElement('searchableselector', 'abj', get_string('apogee:attendance_abj', 'gradeexport_apogee'), $users, array('multiple'));
+            $mform->addElement('searchableselector', 'abi', get_string('apogee:attendance_abi', 'gradeexport_apogee'), $users, array('multiple'));
+        }
+
         $this->add_action_buttons();
+    }
+
+    function validation($data, $files)
+    {
+        $errors = parent::validation($data, $files);
+        if (!empty($data['abj']) && !empty($data['abi'])) {
+            $communs = array_intersect($data['abj'], $data['abi']);
+            if (count($communs) > 0) {
+                $errors['abj'] = get_string('apogee:attendance:error', 'gradeexport_apogee');
+                $errors['abi'] = get_string('apogee:attendance:error', 'gradeexport_apogee');
+            }
+        }
+
+        return $errors;
     }
 }

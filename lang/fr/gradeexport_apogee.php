@@ -44,3 +44,10 @@ $string['mapping_type'] = 'Mapping des étudiants';
 $string['mapping_type_desc'] = 'Comment relier les étudiants inscrits au cours avec les étudiants listés dans le fichier .csv fourni.';
 $string['mapping_type_name'] = 'Nom-prénom';
 $string['mapping_type_idnumber'] = 'Numéro étudiant-Numéro d\'identification';
+
+$string['attendance'] = 'Gestion des absences';
+$string['attendance_desc'] = '<div class="alert alert-info">Grâce aux deux champs de sélection suivants vous pouvez identifier les étudiants absents. En fonction du type d\'absence la bonne valeur sera donnée pour la saisie dans Apogée:
+    <strong>ABJ</strong> pour une absence justifiée et <strong>ABI</strong> pour une absence injustifiée. Ces valeurs pourront être ajoutées si besoin à postériori dans le fichier généré.</div>';
+$string['attendance_abj'] = 'Absence(s) justifiée(s) - ABJ';
+$string['attendance_abi'] = 'Absence(s) injustifiée(s) - ABI';
+$string['attendance_error'] = 'Erreur dans la sélection: des étudiants ne peuvent pas être sélectionnés dans les absences justifiées ET dans les absences injustitifées.';
