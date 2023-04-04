@@ -45,7 +45,10 @@ $manager = new course_enrolment_manager($PAGE, $course);
 require_capability('moodle/grade:export', $context);
 require_capability('gradeexport/apogee:view', $context);
 
-print_grade_page_head($COURSE->id, 'export', 'apogee', get_string('exportto', 'grades') . ' ' . get_string('pluginname', 'gradeexport_apogee'));
+$actionbar = new \core_grades\output\export_action_bar($context, $PAGE->url, 'apogee');
+print_grade_page_head($COURSE->id, 'export', 'apogee',
+    get_string('exportto', 'grades') . ' ' . get_string('pluginname', 'gradeexport_apogee'),
+    false, false, true, null, null, null, $actionbar);
 export_verify_grades($COURSE->id);
 
 $actionurl = new moodle_url('/grade/export/apogee/export.php', array('id' => $course->id));
