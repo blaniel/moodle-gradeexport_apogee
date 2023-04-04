@@ -101,10 +101,10 @@ class grade_export_apogee_form extends moodleform
         }
 
         if ($users) {
-            $mform->addElement('header', 'attendance', get_string('apogee:attendance', 'gradeexport_apogee'));
-            $mform->addElement('html',  get_string('apogee:attendance_desc', 'gradeexport_apogee'));
-            $mform->addElement('searchableselector', 'abj', get_string('apogee:attendance_abj', 'gradeexport_apogee'), $users, array('multiple'));
-            $mform->addElement('searchableselector', 'abi', get_string('apogee:attendance_abi', 'gradeexport_apogee'), $users, array('multiple'));
+            $mform->addElement('header', 'attendance', get_string('attendance', 'gradeexport_apogee'));
+            $mform->addElement('html',  get_string('attendance_desc', 'gradeexport_apogee'));
+            $mform->addElement('searchableselector', 'abj', get_string('attendance_abj', 'gradeexport_apogee'), $users, array('multiple'));
+            $mform->addElement('searchableselector', 'abi', get_string('attendance_abi', 'gradeexport_apogee'), $users, array('multiple'));
         }
 
         $this->add_action_buttons();
@@ -116,8 +116,8 @@ class grade_export_apogee_form extends moodleform
         if (!empty($data['abj']) && !empty($data['abi'])) {
             $communs = array_intersect($data['abj'], $data['abi']);
             if (count($communs) > 0) {
-                $errors['abj'] = get_string('apogee:attendance:error', 'gradeexport_apogee');
-                $errors['abi'] = get_string('apogee:attendance:error', 'gradeexport_apogee');
+                $errors['abj'] = get_string('attendance:error', 'gradeexport_apogee');
+                $errors['abi'] = get_string('attendance:error', 'gradeexport_apogee');
             }
         }
 
