@@ -12,10 +12,11 @@ Installation
 1. Installation du module
 
 - Avec git:
-> git clone https://github.com/andurif/moodle-gradeexport_apogee.git grade/export/apogee
+> git clone https://github.com/andurif/moodle-gradeexport_apogee.git grade/export/apogee<br/>
+> git checkout MOODLE_400_STABLE (si besoin)
 
 - Téléchargement:
-> Télécharger le zip depuis https://github.com/andurif/moodle-gradeexport_apogee/archive/refs/heads/master.zip, dézipper l'archive dans le dossier grade/export/ et renommer le si besoin le dossier en "apogee" ou installez-le depuis la page d'installation des plugins si vous possédeez les bons droits.
+> Télécharger le zip depuis https://github.com/andurif/moodle-gradeexport_apogee/archive/refs/heads/MOODLE_400_STABLE.zip, dézipper l'archive dans le dossier grade/export/ et renommer le si besoin le dossier en "apogee" ou installez-le depuis la page d'installation des plugins si vous possédeez les bons droits.
   
 2. Aller sur la page de notifications pour finaliser l'installation du plugin.
 
