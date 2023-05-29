@@ -33,6 +33,7 @@ $string['apogee:publish'] = 'Publish Apogée grade export';
 $string['select_file'] = 'Source file';
 $string['source_file'] = 'Source';
 $string['select_file_help'] = 'Source file extracted from Apogée with the list of students whose we want to add grade for the selected grade item.';
+$string['select_file_error'] = 'You must supply a source file to proceed to the grades export';
 $string['delimiter'] = 'Column delimiter';
 $string['delimiter_help'] = 'Column delimiter used in the source file. This delimiter will be also used in the export with users grades.';
 $string['examplecsv'] = 'Example .csv file from Apogée';

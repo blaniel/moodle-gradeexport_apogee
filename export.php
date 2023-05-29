@@ -60,5 +60,12 @@ if ($data) {
     $event->trigger();
     $export->print_grades();
 } else {
-    redirect(new moodle_url('/grade/export/apogee/index.php', array('id' => $course->id)));
+    // Form validation return errors so we display the form with errors.
+    $actionbar = new \core_grades\output\export_action_bar($context, $PAGE->url, 'apogee');
+    print_grade_page_head($COURSE->id, 'export', 'apogee',
+        get_string('exportto', 'grades') . ' ' . get_string('pluginname', 'gradeexport_apogee'),
+        false, false, true, null, null, null, $actionbar);
+
+    $mform->display();
+    echo $OUTPUT->footer();
 }

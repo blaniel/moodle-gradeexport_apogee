@@ -83,7 +83,7 @@ class grade_export_apogee_form extends moodleform
             'trusttext' => false,
         ));
         $mform->addHelpButton('importfile', 'select_file', 'gradeexport_apogee', '', null);
-        $mform->addRule('importfile', null, 'required', null, 'client');
+        $mform->addRule('importfile', get_string('select_file_error', 'gradeexport_apogee'), 'required', null, 'client');
 
         $delimiterslist = ['semicolon' => ';', 'comma' => ',', 'tab' => '/t'];
         $mform->addElement('select', 'delimiter', get_string('delimiter', 'gradeexport_apogee'), $delimiterslist);
@@ -116,8 +116,8 @@ class grade_export_apogee_form extends moodleform
         if (!empty($data['abj']) && !empty($data['abi'])) {
             $communs = array_intersect($data['abj'], $data['abi']);
             if (count($communs) > 0) {
-                $errors['abj'] = get_string('attendance:error', 'gradeexport_apogee');
-                $errors['abi'] = get_string('attendance:error', 'gradeexport_apogee');
+                $errors['abj'] = get_string('attendance_error', 'gradeexport_apogee');
+                $errors['abi'] = get_string('attendance_error', 'gradeexport_apogee');
             }
         }
 

@@ -33,6 +33,7 @@ $string['apogee:publish'] = 'Publier l\'export pour Apogée';
 $string['select_file'] = 'Fichier source';
 $string['source_file'] = 'Source';
 $string['select_file_help'] = 'Fichier source extrait d\'Apogée contenant la liste des étudiants pour lesquels renseigner la note obtenue pour l\'élément d\'évaluation selectionné.';
+$string['select_file_error'] = 'Veuillez renseigner un fichier source pour pouvoir faire l\'export';
 $string['delimiter'] = 'Séparateur de colonne';
 $string['delimiter_help'] = 'Séparateur de colonne utilisé dans le fichier source. Ce séparateur sera également utilisé dans le fichier qui sera généré avec les notes des utilisateurs.';
 $string['examplecsv'] = 'Fichier .csv exemple extrait d\'Apogée';
