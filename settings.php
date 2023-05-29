@@ -45,4 +45,11 @@ if ($hassiteconfig) {
             'idnumber' => get_string('mapping_type_idnumber', 'gradeexport_apogee'),
         )
     ));
+
+    $settings->add(new admin_setting_configtext(
+        'gradeexport_ucaapogee/email_regexp_criteria',
+        get_string('email_regexp_criteria', 'gradeexport_apogee'),
+        get_string('email_regexp_criteria_desc', 'gradeexport_apogee'),
+        '/.+@etu\.yourdomain\.com$/'
+    ));
 }

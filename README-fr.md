@@ -5,7 +5,7 @@ Plugin d'export de notes ayant pour but d'obtenir un fichier contenant les notes
 Pré-requis
 ------------
 - Moodle en version 3.3 (build 2017051500) ou plus récente.<br/>
--> Tests effectués sur des versions 3.3 à 4.0<br/>
+-> Tests effectués sur des versions 3.3 à 4.2<br/>
 
 Installation
 ------------
@@ -25,6 +25,15 @@ Installation
 > Administration du site -> Notes -> Réglages d'exportation -> Fichier pour Apogée -> startlist_delimiter
 
 Cette option vous permet de définir un délimiteur qui indiquera le début de la liste des utilisateurs dans le fichier .csv importé. Lors du parcours du fichier, si cette chaîne est rencontrée cela signifiera que les prochaines lignes correspondront aux étudiants et qu'il faudra donc rajouter les notes qu'ils ont obtenus.
+
+> Administration du site -> Notes -> Réglages d'exportation -> Fichier pour Apogée -> mapping_type
+
+Cette option vous permet de déterminer sur quelles informations effectuer la correspondance entre les utilisateurs du fichier fourni et ceux de la base de données.
+
+> Administration du site -> Notes -> Réglages d'exportation -> Fichier pour Apogée -> email_regexp_criteria
+
+Cette option vous permet de définir une expression régulière sur l'adresse mail pour identifier les utilisateurs à afficher dans le formulaire.
+
   
   
 Description / Utilisation

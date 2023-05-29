@@ -25,6 +25,16 @@ Installation
 > Site administration -> Grades -> Export settings -> File for Apogée -> startlist_delimiter
 
 This option will determine the start of the users list in the .csv used file. If this variable is met, it means the next lines will correspond to students lines where we need to add their grades.
+
+> Site administration -> Grades -> Export settings -> File for Apogée -> mapping_type
+
+This option will determine the type of mapping used to match users from the given file to users in the database.
+
+> Site administration -> Grades -> Export settings -> File for Apogée -> email_regexp_criteria
+
+This option will allow to define a regular expression on email address to filter users who need to display in the form.
+
+
   
 Description / Working
 ------

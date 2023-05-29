@@ -45,6 +45,8 @@ $string['mapping_type'] = 'Mapping des étudiants';
 $string['mapping_type_desc'] = 'Comment relier les étudiants inscrits au cours avec les étudiants listés dans le fichier .csv fourni.';
 $string['mapping_type_name'] = 'Nom-prénom';
 $string['mapping_type_idnumber'] = 'Numéro étudiant-Numéro d\'identification';
+$string['email_regexp_criteria'] = 'Critère de tri sur l\'adresse email';
+$string['email_regexp_criteria_desc'] = 'Expression régulière définie sur l\'adresse mail pour filtrer les utilisateurs à afficher dans la sélection. Si laissé vide alors aucun filtre ne sera appliqué.';
 
 $string['attendance'] = 'Gestion des absences';
 $string['attendance_desc'] = '<div class="alert alert-info">Grâce aux deux champs de sélection suivants vous pouvez identifier les étudiants absents. En fonction du type d\'absence la bonne valeur sera donnée pour la saisie dans Apogée:
