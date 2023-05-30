@@ -47,7 +47,8 @@ To summarize, this plugin will read the given file and will complete it with stu
 This setting was directly integrated in the plugin previous versions code but it is now an administation setting to add more flexibility.</p>
 <p>In the form it will be possible to identify absent students and to associate a specific Apogée value (ABJ for a justified non attendance and ABI for a unjustified non attendance).</p>
 
-<p>Note: to link file data and users stored in database, we use the <i>id number</i> field where we store the student code visible for example in our .csv file.<br/>
+<p>Note: to link file data and users stored in database, we already have set two possible mappings: on lastname/firstname and on idnumber.
+It's possible to choose in the plugin configuration which method will be use to match users.<br/>
 According to your configuration, it could be needed for now to directly change the <i>print_grades()</i> function of this same .php file to permit the link with another field of the mdl_user table or from another column.</p>
 
 

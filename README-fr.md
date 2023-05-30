@@ -47,7 +47,8 @@ En résumé, le plugin parcourera ce fichier fourni par l'utilisateur et le comp
 Ce paramètre était directement intégré dans le code des versions précédentes du plugin mais a été ajouté comme paramètre  pour ajouter plus de fléxibilité.</p>
 <p>Dans le formulaire il sera aussi possible de définir les étudiants absents et de leur associer dans le fichier une valeur de note spécifique à Apogée (ABJ pour une absence justifiée et ABI pour une absence non justifiée).</p>
 
-<p>Note: pour faire le lien avec les utilisateurs en base de donnée, nous utilisons le champ <i>Numéro d'identification</i> où est renseigné pour tous le code étudiant que l'on pourra retrouver dans le fichier .csv.<br/>
+<p>Note: pour faire le lien avec les utilisateurs en base de donnée, nous avons pré paramétré deux types de correspondance: sur le nom/prénom et sur le numéro d'identification/code étudiant.
+Il est possible de choisir quel mapping utiliser dans la configuration du plugin.<br/>
 En fonction de votre configuration, il faudra, pour l'instant, modifier directement la fonction <i>print_grades()</i> du même fichier pour pouvoir faire le lien sur un autre champ de la table mdl_user ou depuis une autre colonne du fichier fourni.</p>
 
 To do / Améliorations possibles
