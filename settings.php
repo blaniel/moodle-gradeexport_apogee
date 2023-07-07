@@ -23,10 +23,9 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-if ($hassiteconfig) {
-    $settings = new admin_settingpage('gradeexport_apogee', get_string('pluginname', 'gradeexport_apogee'));
-    $ADMIN->add('localplugins', $settings);
+defined('MOODLE_INTERNAL') || die;
 
+if ($ADMIN->fulltree) {
     // Limit of courses shown in the list view by default.
     $settings->add(new admin_setting_configtext(
         'gradeexport_apogee/startlist_delimiter',
